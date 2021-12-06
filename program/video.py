@@ -63,8 +63,8 @@ async def vplay(c: Client, m: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="• Mᴇɴᴜ", callback_data="cbmenu"),
-                InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data="cls"),
+                InlineKeyboardButton(text="• Меню", callback_data="cbmenu"),
+                InlineKeyboardButton(text="• Закрыть", callback_data="cls"),
             ]
         ]
     )
@@ -77,7 +77,7 @@ async def vplay(c: Client, m: Message):
     a = await c.get_chat_member(chat_id, aing.id)
     if a.status != "administrator":
         await m.reply_text(
-            f"💡 To use me, I need to be an **Administrator** with the following **permissions**:\n\n» ❌ __Delete messages__\n» ❌ __Add users__\n» ❌ __Manage video chat__\n\nData is **updated** automatically after you **promote me**"
+            f"💡 Чтобы включить меня, мне нужно быть **Администратором** со следующими **разрешениями:\n\n» ❌ __Удаление сообщений__\n» ❌ __Добавление пользователей__\n» ❌ __Управление видеочатами__\n\nДанные **обновятся** автоматически после того, как вы **меня продвигаете**"
         )
         return
     if not a.can_manage_voice_chats:
@@ -125,7 +125,7 @@ async def vplay(c: Client, m: Message):
 
     if replied:
         if replied.video or replied.document:
-            loser = await replied.reply("📥 **downloading video...**")
+            loser = await replied.reply("📥 **скачивание видео...**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
