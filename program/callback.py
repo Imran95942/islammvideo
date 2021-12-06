@@ -13,7 +13,7 @@ from config import (
 )
 
 
-@Client.on_callback_query(filters.regex("cbstart"))
+@Client.on_callback_query(filters.regex("isaalm"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ **Welcome [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
